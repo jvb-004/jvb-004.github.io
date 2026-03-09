@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Fedora System Interface</title>
+<title>Fedora Terminal</title>
 
 <style>
 
 body{
-background:#0d1117;
+background:#0b0f1a;
 color:#58a6ff;
 font-family:monospace;
-margin:0;
 padding:40px;
-overflow:hidden;
 }
 
 #terminal{
-max-width:900px;
-margin:auto;
-font-size:18px;
-line-height:1.5;
 white-space:pre-line;
+font-size:18px;
+max-width:900px;
 }
 
 .cursor{
@@ -36,24 +32,6 @@ animation:blink 1s infinite;
 100%{opacity:1}
 }
 
-#title{
-color:white;
-font-size:28px;
-margin-bottom:20px;
-}
-
-.command{
-color:#8b949e;
-}
-
-.output{
-color:#58a6ff;
-}
-
-.logo{
-color:#79c0ff;
-}
-
 </style>
 </head>
 
@@ -65,38 +43,53 @@ color:#79c0ff;
 
 const lines = [
 
+"Hi explorer, I'm jvb. I'm gonna tell you things about Fedora Linux.",
+"",
+"Scanning visitor...",
+"Access granted.",
+"",
 "Initializing system kernel...",
 "Loading modules...",
 "Accessing Fedora repositories...",
 "",
-" ███████╗███████╗██████╗  ██████╗ ██████╗  █████╗ ",
-" ██╔════╝██╔════╝██╔══██╗██╔═══██╗██╔══██╗██╔══██╗",
-" █████╗  █████╗  ██║  ██║██║   ██║██████╔╝███████║",
-" ██╔══╝  ██╔══╝  ██║  ██║██║   ██║██╔══██╗██╔══██║",
-" ██║     ███████╗██████╔╝╚██████╔╝██║  ██║██║  ██║",
+"==============================",
+" Fedora Linux System Interface",
+"==============================",
 "",
-"Fedora Linux System Interface",
+"$ what-is-fedora",
+"Fedora Linux is a free and open-source operating system.",
+"It is developed by the Fedora Project.",
+"It is sponsored by Red Hat and used by developers worldwide.",
 "",
-"$ whoami",
-"guest",
+"$ why-choose-fedora",
+"- Completely open source",
+"- Strong security with SELinux",
+"- Very modern Linux technologies",
+"- Large developer community",
+"- Sponsored by Red Hat",
 "",
-"$ uname -a",
-"Linux fedora workstation kernel 6.x",
+"$ who-uses-fedora",
+"- Software developers",
+"- Cybersecurity researchers",
+"- Linux enthusiasts",
+"- Open-source contributors",
 "",
-"$ cat /etc/os-release",
-"NAME=Fedora Linux",
-"ID=fedora",
-"COMMUNITY=Fedora Project",
+"$ desktop-environment",
+"Fedora Workstation uses the GNOME desktop environment.",
+"It is modern, clean and optimized for productivity.",
 "",
-"$ features",
-"- Open source",
-"- RPM package manager",
-"- DNF software management",
-"- GNOME desktop environment",
-"- SELinux security",
+"$ package-manager",
+"Fedora uses RPM packages and the DNF package manager.",
+"",
+"$ example-install",
+"sudo dnf install firefox",
+"",
+"$ fedora-motto",
+"'Freedom. Friends. Features. First.'",
 "",
 "$ status",
 "System ready."
+
 ]
 
 let lineIndex = 0
@@ -122,7 +115,7 @@ terminal.innerHTML += "\n"
 lineIndex++
 charIndex = 0
 
-setTimeout(typeLine,200)
+setTimeout(typeLine,250)
 
 }
 
@@ -135,4 +128,5 @@ typeLine()
 </script>
 
 </body>
+
 </html>
