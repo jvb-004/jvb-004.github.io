@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fedora System Interface</title>
+
+<style>
+
+body{
+background:#0d1117;
+color:#58a6ff;
+font-family:monospace;
+margin:0;
+padding:40px;
+overflow:hidden;
+}
+
+#terminal{
+max-width:900px;
+margin:auto;
+font-size:18px;
+line-height:1.5;
+white-space:pre-line;
+}
+
+.cursor{
+display:inline-block;
+width:10px;
+background:#58a6ff;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0}
+100%{opacity:1}
+}
+
+#title{
+color:white;
+font-size:28px;
+margin-bottom:20px;
+}
+
+.command{
+color:#8b949e;
+}
+
+.output{
+color:#58a6ff;
+}
+
+.logo{
+color:#79c0ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="terminal"></div><span class="cursor"></span>
+
+<script>
+
+const lines = [
+
+"Initializing system kernel...",
+"Loading modules...",
+"Accessing Fedora repositories...",
+"",
+" ███████╗███████╗██████╗  ██████╗ ██████╗  █████╗ ",
+" ██╔════╝██╔════╝██╔══██╗██╔═══██╗██╔══██╗██╔══██╗",
+" █████╗  █████╗  ██║  ██║██║   ██║██████╔╝███████║",
+" ██╔══╝  ██╔══╝  ██║  ██║██║   ██║██╔══██╗██╔══██║",
+" ██║     ███████╗██████╔╝╚██████╔╝██║  ██║██║  ██║",
+"",
+"Fedora Linux System Interface",
+"",
+"$ whoami",
+"guest",
+"",
+"$ uname -a",
+"Linux fedora workstation kernel 6.x",
+"",
+"$ cat /etc/os-release",
+"NAME=Fedora Linux",
+"ID=fedora",
+"COMMUNITY=Fedora Project",
+"",
+"$ features",
+"- Open source",
+"- RPM package manager",
+"- DNF software management",
+"- GNOME desktop environment",
+"- SELinux security",
+"",
+"$ status",
+"System ready."
+]
+
+let lineIndex = 0
+let charIndex = 0
+let terminal = document.getElementById("terminal")
+
+function typeLine(){
+
+if(lineIndex < lines.length){
+
+if(charIndex < lines[lineIndex].length){
+
+terminal.innerHTML += lines[lineIndex][charIndex]
+charIndex++
+
+setTimeout(typeLine,20)
+
+}
+
+else{
+
+terminal.innerHTML += "\n"
+lineIndex++
+charIndex = 0
+
+setTimeout(typeLine,200)
+
+}
+
+}
+
+}
+
+typeLine()
+
+</script>
+
+</body>
+</html>
